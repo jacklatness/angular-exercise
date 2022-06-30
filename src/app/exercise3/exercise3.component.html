@@ -1,0 +1,14 @@
+<div class="text-center">
+
+    <form>
+        <label>Select year: </label>
+        <select name="thisYear" [(ngModel)]="thisYear">
+            <option *ngFor="let year of years" [attr.value]="year" [value]="year">
+                {{year}}
+            </option>
+        </select>
+    </form>
+
+    <app-year [year]="thisYear"></app-year>
+
+</div>

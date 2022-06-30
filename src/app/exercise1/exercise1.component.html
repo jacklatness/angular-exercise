@@ -1,0 +1,28 @@
+<div id="exercise1-div">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number: </label>
+            <input
+                type="text"
+                id="phoneNumber" 
+                class="form-control" 
+                maxlength="13"
+                canadaPhone
+                formControlName="phoneNumber"
+                [(ngModel)]="phoneNumber"
+                />
+            <div *ngIf="(f.phoneNumber.touched && f.phoneNumber.invalid) || 
+                ( phoneLen > 0 && phoneLen < 10)">
+                <span class="text-error">It only contains {{ phoneLen }} numbers.</span>
+                <br />
+                <span class="text-error" *ngIf="f.phoneNumber.errors?.['required']">Phone Number is required.</span>
+            </div>
+        </div>
+        <br />
+        <button class="btn btn-primary" [disabled]="phoneLen < 10" type="submit">Submit</button>
+        <br />
+        <span>Inputted Phone Number: {{ phoneNumber }}</span>
+        <br />
+        <span>Formatted Number: {{ formattedNumber }}</span>
+    </form>
+</div>

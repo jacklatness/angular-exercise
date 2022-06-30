@@ -1,0 +1,7 @@
+@import url('../app.component.css');
+
+#exercise1-div {
+    margin: auto;
+    width: 33%;
+    padding: 10px;
+}
