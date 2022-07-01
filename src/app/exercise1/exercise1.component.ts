@@ -18,7 +18,7 @@ export class Exercise1Component implements OnInit {
 
   form = new FormGroup({
     phoneNumber: new FormControl('', Validators.required)
-  }, {updateOn: 'change'});
+  }, {updateOn: 'blur'});
 
   get phoneLen() {
     let phoneNumber = this.form.value.phoneNumber;
